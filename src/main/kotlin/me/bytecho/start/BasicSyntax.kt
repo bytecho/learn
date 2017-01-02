@@ -1,4 +1,4 @@
-package me.bytecho.base
+package me.bytecho.start
 
 /**
  * Created by Alan Wang on 2017-1-2.
@@ -43,6 +43,6 @@ fun max(a: Int, b: Int) = if (a > b) a else b
 fun parseInt(s: String): Int? = s.toInt()
 
 fun toInt(s: Any?): Int? {
-    if(s != null && s is String) return parseInt(s)
+    if (s != null && s is String) return parseInt(s)
     return null
 }

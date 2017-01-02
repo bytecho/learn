@@ -1,4 +1,4 @@
-package me.bytecho.base
+package me.bytecho.start
 
 import org.junit.After
 import org.junit.Before
@@ -22,7 +22,7 @@ class BasicSyntaxKtTest {
 
     @Test
     fun parseInt() {
-      assert(me.bytecho.base.parseInt("2") == 2)
+      assert(me.bytecho.start.parseInt("2") == 2)
     }
 
 }
