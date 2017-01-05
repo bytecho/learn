@@ -32,6 +32,17 @@ fun main(args: Array<String>) {
     val d1 = 123.23333 //double var
     val f1 = 123.33f // float var
 
+    //Representation
+    val a: Int = 1000
+    println(a==a)
+    println(a===a)
+    val boxedA: Int? = a
+    val boxedA2: Int? = a
+    println(boxedA === boxedA2)
+
+    //As a consequence, smaller types are NOT implicitly converted to bigger types.
+
+
 
 }
 
