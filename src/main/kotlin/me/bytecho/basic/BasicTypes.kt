@@ -31,4 +31,8 @@ fun main(args: Array<String>) {
     val l3 = 0b0011 //bin var
     val d1 = 123.23333 //double var
     val f1 = 123.33f // float var
+
+
 }
+
+class PackageTest {}
