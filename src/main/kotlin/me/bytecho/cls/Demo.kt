@@ -77,6 +77,9 @@ class MemberDemo {
     class Inner
 
     //obj declaration
+    //In Kotlin, unlike Java or C#, classes do not have static methods. In most cases, it's recommended to simply use package-level
+    //functions instead
+    //Even more specifically, if you declare a companion object inside your class
     companion object Instance {
         fun getInstance(): MemberDemo = MemberDemo("hou")
     }
