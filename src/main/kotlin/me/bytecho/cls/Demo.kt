@@ -11,6 +11,9 @@ fun main(args: Array<String>) {
 
     val p = Person("NO.9")
     val p2 = Person2("NO.5", 233233233, 23)
+
+    ObjCls.str = "this is obj cls"
+    ObjCls.prt()
 }
 
 //class with empty body
@@ -83,4 +86,9 @@ class MemberDemo {
     companion object Instance {
         fun getInstance(): MemberDemo = MemberDemo("hou")
     }
+}
+
+object ObjCls {
+    var str: String?= null
+    fun prt() {println("$str")}
 }
