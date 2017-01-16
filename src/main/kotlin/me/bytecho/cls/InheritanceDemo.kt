@@ -5,7 +5,15 @@ package me.bytecho.cls
  * Created by Alan on 2017/1/13.
  */
 fun main(args: Array<String>) {
-
+    val arr:Array<Any> = arrayOf(Expr.Const(3.0), Expr.Sum(1,2),Expr.NotDouble("ha"))
+    for (i in arr) {
+        when(i) {
+          /*  is Expr.Const -> i.result()
+            is Expr.Sum -> i.result()
+            is Expr.NotDouble -> i.result()*/
+            is Expr -> i.result()
+        }
+    }
 }
 
 //default final, can't be inherited. using open keyword to announce inheritance
@@ -90,8 +98,21 @@ abstract class AbSub : Ab() {
 }
 
 //Sealed Classes
-sealed class Expr {
-    class Const(var number: Double) : Expr()
-    class Sum(var i: Int, var j: Int) : Expr()
-    object NotNumber : Expr()
+sealed class Expr() {
+    abstract fun result()
+    class Const(var number: Double) : Expr() {
+        override fun result() {
+          println("number is $number")
+        }
+    }
+    class Sum(var i: Int, var j: Int) : Expr() {
+        override fun result() {
+            println("i + j = ${i + j}")
+        }
+    }
+    class NotDouble(var arg: Any) : Expr() {
+        override fun result() {
+            println("number is double: ${arg is Double}")
+        }
+    }
 }
