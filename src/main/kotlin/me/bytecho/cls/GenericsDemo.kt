@@ -28,4 +28,26 @@ interface Pusher<in T> {
     fun push(arr: List<T>, e: T)
 }
 
-//type projections
+class Arr<T>(val size: Int = 5) {
+    val arr: Array<T>? = null
+    fun get(i: Int): T {
+        return arr?.get(0) as T
+    }
+
+    fun add(t: T) {}
+}
+
+fun copy(from: Arr<out Any>, to: Arr<Any>) {
+    assert(from.size == to.size)
+    for (i in 0..from.size) {
+        to.add(from.get(i))
+    }
+}
+
+fun testCopy() {
+    val from: Arr<String> = Arr(10);
+    val to: Arr<Any> = Arr(10)
+    copy(from, to)
+}
+
+//TODO wait to review
