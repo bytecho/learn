@@ -20,11 +20,13 @@ fun main(args: Array<String>) {
 }
 
 open class AAA {}
-class BBB: AAA(){}
+class BBB : AAA() {}
+
 fun testInstance() {
-    val a:BBB = BBB()
+    val a: BBB = BBB()
     println(a is AAA)
 }
+
 //fun as param
 fun concatEach(subFix: String, arr: () -> ArrayList<String>) {
     arr.invoke().forEach { s -> s.plus(subFix) }
@@ -149,18 +151,18 @@ fun hasZeros(ints: Array<Int>): Boolean {
     ints.forEach { if (it == 0) return false }
     return true
 }
+
 /*
 Note that some inline functions may call the lambdas passed to them as parameters not directly from the function body, but
 from another execution context, such as a local object or a nested function. In such cases, non-local control flow is also not
 allowed in the lambdas. To indicate that, the lambda parameter needs to be marked with the crossinline modifier
 */
 inline fun f(crossinline body: () -> Unit) {
-    val thread = object: Runnable {
-        override fun run() {
-           body()
-        }
-    }
+    val thread = Runnable { body() }
 }
 /*break and continue are not yet available in inlined lambdas, but we are planning to support them too*/
 
 //Reified type parameters
+inline fun <reified T> members() = T::class.members
+
+
