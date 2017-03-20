@@ -44,6 +44,10 @@ class Person constructor(name: String) {
 
     //init properties
     val prop1 = name.toUpperCase()
+
+    override fun equals(other: Any?): Boolean {
+        return other is Person && other.prop1.equals(prop1)
+    }
 }
 
 class Person2(val name: String, val id: Long, var age: Int) {
