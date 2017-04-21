@@ -17,10 +17,10 @@ object Utils {
 
 
     fun prtRightCutTag(tag: String) {
-        println(TAG_PREF + tag + ":  ------------------------------------>")
+        println(TAG_PREF + tag + ":------------------------------------>")
     }
 
     fun prtLeftCutTag(tag: String) {
-        println(TAG_PREF + tag + ":  <-------------------------------------")
+        println(TAG_PREF + tag + ":<-------------------------------------")
     }
 }
