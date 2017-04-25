@@ -23,4 +23,8 @@ object Utils {
     fun prtLeftCutTag(tag: String) {
         println(TAG_PREF + tag + ":<-------------------------------------")
     }
+
+    fun newLine() {
+        println("\n")
+    }
 }

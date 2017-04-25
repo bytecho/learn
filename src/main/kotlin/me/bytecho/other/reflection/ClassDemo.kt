@@ -4,9 +4,10 @@ package me.bytecho.other.reflection
  *
  * Created by Alan on 2017/4/24.
  */
-class ClassDemo constructor(var name: String, val id: Long) {
+class ClassDemo constructor(var name: String, val id: Long, var remark: String?) {
 
-    val remark: String? = null
+    constructor(name: String, id: Long) : this(name, id, null)
+
     fun prt(msg: String) {
         println("name is $name, id is $id, msg：$msg")
     }
