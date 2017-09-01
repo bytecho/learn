@@ -20,12 +20,19 @@ fun main(args: Array<String>) {
 
     //iterator
     val arr = intArrayOf(1, 2, 3, 4, 5, 6, 10)
-  /*  for (i in arr) {
-        println(i)
-    }
-    for (i in arr.indices) {
-        println(i)
-    }*/
+    /*  for (i in arr) {
+          println(i)
+      }
+      for (i in arr.indices) {
+          println(i)
+      }*/
 
     arr.forEach { println(it) }
+
+    var list = mutableListOf<Int>(1, 2, 3, 4, 5, 6, 7)
+    list.forEach { println(it) }
+
+    for (i in list.indices) {
+        println(i)
+    }
 }
