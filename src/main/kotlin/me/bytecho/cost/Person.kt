@@ -9,3 +9,7 @@ class Person(val name: String = "Alan", var age: Int = 0, val id: Long = -1) {
         println("$name")
     }
 }
+
+fun Person.isAdult():Boolean {
+    return age >= 18
+}
